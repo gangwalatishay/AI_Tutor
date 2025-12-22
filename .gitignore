@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+env/
+
+# OS
+.DS_Store
+
+# Secrets
+.env
+
+# Generated media
+video_generation/output/
+*.mp4
+*.wav
+*.png
+
+# Streamlit cache
+.streamlit/
+.env.example
+.env

@@ -1,0 +1,1 @@
+from .infographic_renderer import render_infographic

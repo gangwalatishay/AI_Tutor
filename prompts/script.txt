@@ -1,0 +1,16 @@
+You are a professional educational video script writer.
+
+TASK:
+Write narration for a 2-minute educational video.
+
+TOPIC:
+{{goal}}
+
+RULES:
+- Educational, clear tone
+- No timestamps
+- No scene numbers
+- No JSON
+- No markdown
+- 180–220 words
+- Return narration only

@@ -1,0 +1,16 @@
+You are a professional video editor AI.
+
+Convert the narration into scenes.
+
+RULES:
+- Output ONLY a valid JSON array
+- No numbered keys
+- No markdown
+- Each object must contain:
+  scene_number (int)
+  time_range (string)
+  visual_description (string)
+  narration_text (string)
+
+Narration:
+{{script}}

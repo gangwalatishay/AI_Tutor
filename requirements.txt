@@ -1,0 +1,14 @@
+streamlit
+fastapi
+uvicorn
+moviepy
+pillow
+numpy
+matplotlib
+pysrt
+python-dotenv
+groq
+torch
+transformers
+accelerate
+peft
