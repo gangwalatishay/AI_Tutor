@@ -1,5 +1,7 @@
 import os
-from moviepy.editor import concatenate_videoclips
+# from moviepy.editor import concatenate_videoclips
+from moviepy import VideoFileClip, concatenate_videoclips
+
 from video_generation.scene_renderer import render_scene
 
 
