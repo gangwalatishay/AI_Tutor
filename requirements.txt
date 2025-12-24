@@ -12,3 +12,11 @@ torch
 transformers
 accelerate
 peft
+streamlit
+moviepy>=2.0.0
+imageio
+imageio-ffmpeg
+numpy
+Pillow
+python-dotenv
+groq
