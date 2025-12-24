@@ -3,15 +3,13 @@ import platform
 import subprocess
 import tempfile
 
-from gtts import gTTS
-
 
 def generate_audio(text: str, output_path: str):
     """
     Cross-platform Text-to-Speech engine.
 
-    - macOS → uses native `say` (offline, high quality)
-    - Linux / Cloud → uses gTTS (cloud-safe)
+    - macOS → uses native `say` command (offline, high quality)
+    - Linux / Streamlit Cloud → uses gTTS (cloud-safe)
 
     Output format: WAV (MoviePy compatible)
     """
@@ -21,19 +19,19 @@ def generate_audio(text: str, output_path: str):
     system = platform.system()
 
     # =============================
-    # macOS (local dev)
+    # macOS (local development)
     # =============================
     if system == "Darwin":
         with tempfile.NamedTemporaryFile(suffix=".aiff", delete=False) as tmp:
             tmp_aiff = tmp.name
 
-        # Generate speech using macOS say
+        # Generate speech using macOS "say"
         subprocess.run(
             ["say", "-o", tmp_aiff, text],
             check=True
         )
 
-        # Convert AIFF → WAV
+        # Convert AIFF → WAV using ffmpeg
         subprocess.run(
             [
                 "ffmpeg", "-y",
@@ -53,6 +51,9 @@ def generate_audio(text: str, output_path: str):
     # Linux / Streamlit Cloud
     # =============================
     else:
+        # Lazy import to avoid startup crash
+        from gtts import gTTS
+
         tts = gTTS(text=text, lang="en")
         tts.save(output_path)
 
