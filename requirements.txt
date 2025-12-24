@@ -20,3 +20,5 @@ numpy
 Pillow
 python-dotenv
 groq
+gTTS
+imageio-ffmpeg
